@@ -1,0 +1,355 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+    scroll-behavior: smooth;
+    text-decoration: none;
+}
+header{
+    width: 100vw;
+    height: 120px;
+   display: flex;
+   background-color: white;
+   justify-content: space-around;
+   color: black;
+
+}
+body{
+    width: 100vw;
+    height: 100vh;
+}
+main{
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: max-content;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.Logo{
+    width: 10%;
+    align-items: center;
+    height: 100%;
+}
+.info{
+    display: flex;
+    gap: 10%;
+    align-items: center;
+    width: 40%;
+    justify-content: right;
+}
+.infos_itens{
+    
+    cursor: pointer;
+    
+}
+.infos_itens a{
+    font-weight: 500;
+    font-size: 16px;
+    color: black;
+}
+.text_frame{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    height: max-content;
+    gap: 10px;
+}
+.text_frame span{
+    font-size: 28px;
+    flex-wrap: wrap;
+    width: 60%;
+  
+}
+.text_first::after{
+    content: "";
+    background: black;
+    padding: 1.5px;
+    position: relative;
+    bottom: 5px;
+    animation: bar .8s  infinite;
+}
+.text_frame p{
+    margin-top: 15px;
+}
+
+.skills{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 16px;
+}
+
+.card_body{
+    width: 300px;
+    height: 350px;
+    -webkit-box-shadow: 11px 15px 10px 5px rgba(0,0,0,0.2);
+    -moz-box-shadow: 11px 15px 10px 5px rgba(0,0,0,0.2);
+    box-shadow: 11px 15px 10px 5px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+}
+
+.option_card{
+    display: flex;
+    z-index: 5;
+    width: inherit;
+    height: 30%;
+    bottom: 0;
+    position: absolute;
+    padding: 10px;
+    align-items: center;
+    cursor: auto;
+    gap: 10px;
+    backdrop-filter: blur(5px);
+}
+.preview_code,.preview{
+    flex: 1;
+    border-radius: 30px;
+    height: max-content;
+    padding: 16px 8px ;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+   background-color: black;
+   color: white;
+   transition: all .2s ease;
+}
+.preview:hover, .preview_code:hover{
+    scale: 1.1;
+}
+.card_body span{
+    flex: 1;
+    font-size: 16px;
+}
+.card_body p{
+    flex: 1;
+}  
+.card_body i{
+    position: absolute;
+    left: 10%;
+    bottom: 10%;
+    font-weight: 800;
+}
+.project{
+    width: inherit;
+    height: max-content;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+.project_cards{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    width: inherit;
+    height: inherit;
+    justify-content: center;
+}
+
+.contact{
+    width: 100vw;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    padding: 10px;
+}
+.card_contact{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 90%;
+    max-width: 600px;
+    height: max-content;
+    padding: 10px;
+    flex-wrap: wrap;
+    gap: 40px;
+    background-color: white;
+}
+.card_contact input {
+    flex: 1;
+    outline: none;
+    border: none;
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+    padding: 8px 16px;
+    transition: all .3s ease;
+}
+#input_name{
+    max-width: 350px;
+}
+#input_email{
+    max-width: 350px;
+}
+#input_messager{
+    padding: 8px 16px;
+    width: 100%;
+    max-width: 650px;
+    height: max-content;
+    resize: none;
+    outline: none;
+    border: none;
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+    transition: all .3s ease;
+
+}
+#input_name:focus,#input_email:focus,#input_messager:focus{
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 1);
+}
+/* .card_contact button{
+    padding: 16px 8px;
+    border-radius: 20px;
+    cursor: pointer;
+} */
+
+@keyframes bar {
+    50%{
+        opacity: 0;
+    }
+    
+}
+
+
+
+
+/*
+    Auther: Abdelrhman Said
+*/
+
+
+.wrapper {
+  display: inline-flex;
+  list-style: none;
+}
+
+.wrapper .icon {
+  position: relative;
+  background: #ffffff;
+  border-radius: 50%;
+  padding: 15px;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #ffffff;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #ffffff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #1877F2;
+  color: #ffffff;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background: #1DA1F2;
+  color: #ffffff;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background: #E4405F;
+  color: #ffffff;
+}
+
+.wrapper .github:hover,
+.wrapper .github:hover .tooltip,
+.wrapper .github:hover .tooltip::before {
+  background: #333333;
+  color: #ffffff;
+}
+
+.wrapper .youtube:hover,
+.wrapper .youtube:hover .tooltip,
+.wrapper .youtube:hover .tooltip::before {
+  background: #CD201F;
+  color: #ffffff;
+}
+.button {
+    width: 140px;
+    height: 45px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    }
+  
+  .button:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
