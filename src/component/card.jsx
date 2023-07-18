@@ -1,35 +1,36 @@
-import { useState } from "react"
 
 export default function Cards({name,desc,language,preview}){
-    const [isBlur, setBlur] = useState(false);
+  
     
     if (desc == null) {
         return(
             <div className="card_body">
-                <img src="" alt={`card_icon_${name}`}  />
+                <img src={require(`../assets/${name}.svg`)} alt={`card_icon_${name}`}  />
                 <span>{name}</span>
             </div>
         )
     }
     
     return(
-        <div onMouseEnter={()=>{{setBlur(true)}}} 
-        onMouseLeave={()=>{{setBlur(false)}}}
+        <div 
         className="card_body project_card" >
-            <img src="" alt={`card_icon_${name}`}  />
+            
+            <div className="preview_project">
+                <img src="" alt={`card_icon_${name}`} />
+            </div>
             <span>{name}</span>
             <p>{desc}</p>
             <i>{language}</i>
-            {isBlur && (
+          
                 <div className="option_card">
-                    <a  href={preview} target="_blank" className="preview_code">
+                    <a  href={preview}  
+                    rel="noreferrer" 
+                    target="_blank" 
+                    className="preview_code button">
                         CODING
                     </a>
-                    <a className="preview">
-                        PREVIEW
-                    </a>
                 </div>
-            )}
+            
         </div>
     )
 }

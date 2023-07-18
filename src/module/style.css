@@ -7,8 +7,8 @@
     text-decoration: none;
 }
 header{
-    width: 100vw;
-    height: 120px;
+  width: 100vw;
+  height: 120px;
    display: flex;
    background-color: white;
    justify-content: space-around;
@@ -18,9 +18,11 @@ header{
 body{
     width: 100vw;
     height: 100vh;
+    overflow-x: hidden;
 }
+
 main{
-    margin-top: 5rem;
+  padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,7 +52,8 @@ main{
 .infos_itens a{
     font-weight: 500;
     font-size: 16px;
-    color: black;
+    color: white;
+    padding: 10px 0;
 }
 .text_frame{
     display: flex;
@@ -91,7 +94,7 @@ main{
 
 .card_body{
     width: 300px;
-    height: 350px;
+    height: 380px;
     -webkit-box-shadow: 11px 15px 10px 5px rgba(0,0,0,0.2);
     -moz-box-shadow: 11px 15px 10px 5px rgba(0,0,0,0.2);
     box-shadow: 11px 15px 10px 5px rgba(0,0,0,0.2);
@@ -100,39 +103,46 @@ main{
     gap: 0.9rem;
     position: relative;
     text-align: center;
-    cursor: pointer;
+    justify-content: center;
+    align-items: center;
 }
 
 .option_card{
     display: flex;
+    justify-content: right;
     z-index: 5;
-    width: inherit;
+    width: 50%;
     height: 30%;
     bottom: 0;
+    right: 0;
     position: absolute;
-    padding: 10px;
+    padding: 15px;
     align-items: center;
     cursor: auto;
     gap: 10px;
-    backdrop-filter: blur(5px);
 }
-.preview_code,.preview{
-    flex: 1;
+.preview_code{
     border-radius: 30px;
     height: max-content;
     padding: 16px 8px ;
     cursor: pointer;
     font-size: 14px;
     font-weight: 700;
-   background-color: black;
-   color: white;
-   transition: all .2s ease;
+    background-color: black;
+    color: white;
+    transition: all .2s ease;
+    width: 100%;
 }
 .preview:hover, .preview_code:hover{
     scale: 1.1;
 }
-.card_body span{
+.card_body img{
+    width: 50%;
     flex: 1;
+}
+.card_body span{
+    padding: 4px;
+    flex: .5;
     font-size: 16px;
 }
 .card_body p{
@@ -182,7 +192,6 @@ main{
     padding: 10px;
     flex-wrap: wrap;
     gap: 40px;
-    background-color: white;
 }
 .card_contact input {
     flex: 1;
@@ -227,108 +236,6 @@ main{
 }
 
 
-
-
-/*
-    Auther: Abdelrhman Said
-*/
-
-
-.wrapper {
-  display: inline-flex;
-  list-style: none;
-}
-
-.wrapper .icon {
-  position: relative;
-  background: #ffffff;
-  border-radius: 50%;
-  padding: 15px;
-  margin: 10px;
-  width: 50px;
-  height: 50px;
-  font-size: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.wrapper .tooltip {
-  position: absolute;
-  top: 0;
-  font-size: 14px;
-  background: #ffffff;
-  color: #ffffff;
-  padding: 5px 8px;
-  border-radius: 5px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.wrapper .tooltip::before {
-  position: absolute;
-  content: "";
-  height: 8px;
-  width: 8px;
-  background: #ffffff;
-  bottom: -3px;
-  left: 50%;
-  transform: translate(-50%) rotate(45deg);
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.wrapper .icon:hover .tooltip {
-  top: -45px;
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-.wrapper .icon:hover span,
-.wrapper .icon:hover .tooltip {
-  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
-}
-
-.wrapper .facebook:hover,
-.wrapper .facebook:hover .tooltip,
-.wrapper .facebook:hover .tooltip::before {
-  background: #1877F2;
-  color: #ffffff;
-}
-
-.wrapper .twitter:hover,
-.wrapper .twitter:hover .tooltip,
-.wrapper .twitter:hover .tooltip::before {
-  background: #1DA1F2;
-  color: #ffffff;
-}
-
-.wrapper .instagram:hover,
-.wrapper .instagram:hover .tooltip,
-.wrapper .instagram:hover .tooltip::before {
-  background: #E4405F;
-  color: #ffffff;
-}
-
-.wrapper .github:hover,
-.wrapper .github:hover .tooltip,
-.wrapper .github:hover .tooltip::before {
-  background: #333333;
-  color: #ffffff;
-}
-
-.wrapper .youtube:hover,
-.wrapper .youtube:hover .tooltip,
-.wrapper .youtube:hover .tooltip::before {
-  background: #CD201F;
-  color: #ffffff;
-}
 .button {
     width: 140px;
     height: 45px;
@@ -353,3 +260,139 @@ main{
     color: #fff;
     transform: translateY(-7px);
   }
+
+  /*butão*/
+  .bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 30px;
+    right: 5%;
+    top:5%;
+    
+  }
+  
+  /* Color/shape of burger icon bars */
+  .bm-burger-bars {
+    background: #373a47;
+  }
+  
+  /* Color/shape of burger icon bars on hover*/
+  .bm-burger-bars-hover {
+    background: grey;
+  }
+  
+  /* Position and sizing of clickable cross button */
+  .bm-cross-button {
+    height: 24px;
+    width: 24px;
+  }
+  
+  /* Color/shape of close button cross */
+  .bm-cross {
+    background: #bdc3c7;
+  }
+  
+  /*
+  Sidebar wrapper styles
+  Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+  */
+  .bm-menu-wrap {
+    position: fixed;
+    height: 100%;
+
+  }
+  
+  /* General sidebar styles */
+  .bm-menu {
+    background: #373a47;
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
+    height: 100vh;
+    backdrop-filter: blur(1px);
+  }
+  
+  
+  /* Morph shape necessary with bubble or elastic */
+  .bm-morph-shape {
+    fill: #373a47;
+  }
+  
+  /* Wrapper for item list */
+  .bm-item-list {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 0.8em;
+    gap: 30px;
+    
+    
+  }
+  
+  /* Individual item */
+  .bm-item {
+    display: inline-block;
+    color: white;
+    border-bottom: 1px solid white;
+    padding: 4px;
+    transition: border-bottom .3s ease,width 1s ease ;
+   
+    width:80px;
+  }
+
+  .bm-item:hover{
+    border-bottom: 1px solid grey;
+    width: 100%;
+  }
+
+  /* Styling of overlay */
+  .bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+    
+  }
+
+.contact_icons{
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 10px;
+}
+.icon_lk{
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  background-image: url("../assets/LINKEDIN.svg");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-box-shadow: 5px 4px 3px 0px rgba(0,0,0,0.27); 
+  box-shadow: 5px 4px 3px 0px rgba(0,0,0,0.27);
+  cursor: pointer;
+  position: relative;
+  transition: all .5s ease;
+  bottom: 0px;
+}
+.icon_lk:hover{
+
+  bottom: 10px;
+}
+.icon_git{
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  background-image: url("../assets/GITHUB.svg");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-box-shadow: 5px 4px 3px 0px rgba(0,0,0,0.27); 
+  box-shadow: 5px 4px 3px 0px rgba(0,0,0,0.27);
+  cursor: pointer;
+  position: relative;
+  transition: all .5s ease;
+  bottom: 0px;
+}
+.icon_git:hover{
+
+  bottom: 10px;
+}

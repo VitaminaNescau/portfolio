@@ -1,8 +1,6 @@
 import {useEffect,useState} from "react";
 import Cards from "../component/card";
-import './style.css'
 import { init, send } from "@emailjs/browser";
-
 
 let repositorio;
 const repos = []
@@ -12,54 +10,61 @@ export default function Main(){
     const skills = ["JAVA","HIBERNATE","DOCKER","REACT NATIVE","REACT"]
     init("9c0WCrl2xIjxabuoE")
     return(
-        <main>
-            <section id="Sobre min" className="text_frame">
-                <Typewriter text={"Olá meu nome é Vitor de Jesus e sou um desenvolverdor back-end."}/>
-                <p>"Transformando desafios em código eficiente: Desenvolvimento back-end que impulsiona resultados"</p>
+        <main id="page-wrap">
+            <section id="Tecnologia" className="text_frame">
+                <Typewriter text={"Olá meu nome é Vitor de Jesus e sou um Desenvolverdor."}/>
+                <p>"Transformando desafios em código eficiente: Desenvolvimento que impulsiona resultados"</p>
                 <div className="skills">
                   {skills.map(item=>{
-                    return <Cards name={item} />
+                    return <Cards  key={item} name={item} />
                   })}
                 </div>  
             </section>
             <section id="Projetos" className="project">
+              
               <h1>Projetos</h1>
               <div className="project_cards">
                 {repos.filter(item=>item[1]!=null).map(item=>{
-                  return <Cards name={item[0]} 
+                  return <Cards key={"project_"+item} name={item[0]} 
                   desc={item[1]}
                   language={item[2]}
                   preview={item[3]}
                   />
                 })}
                 </div>
+
             </section>
             <section id="Contatos"className="contact">
               <h1>Envie-me uma mensagem!</h1>
 
 
-              <form action={emailSend}>
+             
                 <div className="card_contact">
-                  <input type="text" name="nome" placeholder="Digite seu nome" id="input_name" />  
+                  <input type="text" name="name" placeholder="Digite seu nome" id="input_name" />  
                   <input type="email" name="email"  placeholder="Digite seu email" id="input_email" />
                   <textarea type="text"  name="messager" placeholder="Digite sua mensagem" id="input_messager" />
-                  <button type="submit" class="button">Enviar</button>
+                  <button onClick={emailSend} className="button">Enviar</button>
                 </div>
-              </form>
+             
 
 
               <div className="contact_icons">
-              <ul class="wrapper">
-                <li class="icon github">
-                  <span class="tooltip">Github</span>
-                  <span><i class="fab fa-github"></i></span>
+                <a href="https://linkedin.com/in/vitor-santos-452500224" target="_blank" className="icon_lk"/>
+                <a href="https://github.com/VitaminaNescau" target="_blank" className="icon_git"/>
+               
+             
+             
+              {/* <ul className="wrapper">
+                <li className="icon github">
+                  <span className="tooltip">Github</span>
+                  <img src={require(`../assets/GITHUB.svg`)}alt=""  />
                 </li>
-                <li class="icon github">
-                  <span class="tooltip">Linkedin</span>
-                  <span><i class="fab fa-github"></i></span>
+                <li className="icon github">
+                  <span className="tooltip">Linkedin</span>
+                  <img src={require("../assets/LINKEDIN.svg")}   alt="" />
                 </li>
                
-              </ul>
+              </ul> */}
               </div>
             </section>
         </main>
@@ -86,28 +91,28 @@ const Typewriter = ({ text }) => {
   
     return <span className="text_first">{displayText}</span>;
   };
-  async function gitApi(){
-    const url = "https://api.github.com/users/vitaminanescau/repos" 
-    await fetch(url)
-      .then(res=>{return res.json()})
-      .then(p=>{
-          repositorio = p
-          repositorio.forEach(repo=>{
-              repos.push([repo.name
-                ,repo.description
-                ,repo.language
-                ,repo.html_url])
-          })
-      })
-    }
+async function gitApi(){
+  const url = "https://api.github.com/users/vitaminanescau/repos" 
+  await fetch(url)
+    .then(res=>{return res.json()})
+    .then(p=>{
+        repositorio = p
+        repositorio.forEach(repo=>{
+            repos.push([repo.name
+              ,repo.description
+              ,repo.language
+              ,repo.html_url])
+        })
+    })
+  }
           
 function emailSend(event){
-  event.preventDefault()
   var template ={
-    name :    event.target.elements.name.value,
-    email:    event.target.elements.email.value,
-    message : event.target.elements.messager.value
+    name :    document.getElementById("input_name").value,
+    email:    document.getElementById("input_email").value,
+    message : document.getElementById("input_messager").value
     }
+
     return send("service_var8sqe","template_f75wcir",template).then(function(response) {
       console.log('SUCCESS!', response.status);
       
