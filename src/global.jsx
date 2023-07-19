@@ -42,4 +42,11 @@ body {
 .icon_git,.icon_lk{
     background-color: ${({theme})=>theme.extraColor}
 }
+#input_name::placeholder,#input_email::placeholder,#input_messager::placeholder{
+    color:${({theme})=>theme.emphasisColor};
+}
+footer{
+    background-color: ${({theme})=>theme.secondColor};
+    color:${({theme})=>theme.emphasisColor};
+}
 `;

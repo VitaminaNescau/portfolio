@@ -31,6 +31,14 @@ main{
     flex-direction: column;
     gap: 5rem;
 }
+footer{
+  width: 100%;
+  height: 5rem;
+  background: red;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+}
 
 .Logo{
     width: 10%;
@@ -121,6 +129,14 @@ main{
     cursor: auto;
     gap: 10px;
 }
+.preview_project{
+  flex: 1;
+}
+.preview_project img{
+  width: 50% !important;
+  margin-top: 5%;
+  padding: 10px;
+}
 .preview_code{
     border-radius: 30px;
     height: max-content;
@@ -132,6 +148,7 @@ main{
     color: white;
     transition: all .2s ease;
     width: 100%;
+    font-weight: 900 !important;
 }
 .preview:hover, .preview_code:hover{
     scale: 1.1;

@@ -7,7 +7,7 @@ const repos = []
 await gitApi();
 
 export default function Main(){
-    const skills = ["JAVA","HIBERNATE","DOCKER","REACT NATIVE","REACT"]
+    const skills = ["JAVA","HIBERNATE","SPRING","DOCKER","REACT NATIVE","REACT"]
     init("9c0WCrl2xIjxabuoE")
     return(
         <main id="page-wrap">
@@ -54,17 +54,7 @@ export default function Main(){
                
              
              
-              {/* <ul className="wrapper">
-                <li className="icon github">
-                  <span className="tooltip">Github</span>
-                  <img src={require(`../assets/GITHUB.svg`)}alt=""  />
-                </li>
-                <li className="icon github">
-                  <span className="tooltip">Linkedin</span>
-                  <img src={require("../assets/LINKEDIN.svg")}   alt="" />
-                </li>
-               
-              </ul> */}
+            
               </div>
             </section>
         </main>

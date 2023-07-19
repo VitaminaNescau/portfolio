@@ -1,8 +1,8 @@
 
 export default function Cards({name,desc,language,preview}){
   
-    
-    if (desc == null) {
+    try {
+        if (desc == null) {
         return(
             <div className="card_body">
                 <img src={require(`../assets/${name}.svg`)} alt={`card_icon_${name}`}  />
@@ -10,13 +10,12 @@ export default function Cards({name,desc,language,preview}){
             </div>
         )
     }
-    
     return(
         <div 
         className="card_body project_card" >
             
             <div className="preview_project">
-                <img src="" alt={`card_icon_${name}`} />
+                <img src={require(`../assets/${name}.svg`)} alt={`card_icon_${name}`} />
             </div>
             <span>{name}</span>
             <p>{desc}</p>
@@ -33,4 +32,11 @@ export default function Cards({name,desc,language,preview}){
             
         </div>
     )
+
+    } catch (error) {
+        console.log(error)
+    }
+    
+    
+   
 }
